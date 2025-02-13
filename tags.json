@@ -1,0 +1,251 @@
+[
+  {
+    "html": "Learn Web Scraping | Scrape This Site | A public sandbox for learning web scraping\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                Scrape This Site\n                            \n\n\n\n\n                                Sandbox\n                            \n\n\n\n\n                                Lessons\n                            \n\n\n\n\n                                FAQ\n                            \n\n\n\n                                Login\n                            \n\n\n\n\n\n\n\n\n\n\n\nWeb Scraping Sandbox\n\n\n\nCountries of the World: A Simple Example\n\n\n                                A single page that lists information about all the countries in the world. Good for those just get started with web scraping.\n                            \n\n\n\n\nHockey Teams: Forms, Searching and Pagination\n\n\n                                Browse through a database of NHL team stats since 1990. Practice building a scraper that handles common website interface components.\n                            \n\n\n\n\nOscar Winning Films: AJAX and Javascript\n\n\n                                Click through a bunch of great films. Learn how content is added to the page asynchronously with Javascript and how you can scrape it.\n                            \n\n\n\n\nTurtles All the Way Down: Frames & iFrames\n\n\n                                Some older sites might still use frames to break up thier pages. Modern ones might be using iFrames to expose data. Learn about turtles as you scrape content inside frames.\n                            \n\n\n\n\nAdvanced Topics: Real World Challenges You'll Encounter\n\n\n                                Scraping real websites, you're likely run into a number of common gotchas. Get practice with spoofing headers, handling logins & session cookies, finding CSRF tokens, and other common network errors.\n                            \n\n\n\n\n\n\n\n\n\n\n\n                    Lessons and Videos \u00a9 Hartley Brody 2023"
+  },
+  {
+    "head": "Learn Web Scraping | Scrape This Site | A public sandbox for learning web scraping"
+  },
+  {
+    "meta": ""
+  },
+  {
+    "title": "Learn Web Scraping | Scrape This Site | A public sandbox for learning web scraping"
+  },
+  {
+    "link": ""
+  },
+  {
+    "meta": ""
+  },
+  {
+    "meta": ""
+  },
+  {
+    "link": ""
+  },
+  {
+    "link": ""
+  },
+  {
+    "link": ""
+  },
+  {
+    "body": "Scrape This Site\n                            \n\n\n\n\n                                Sandbox\n                            \n\n\n\n\n                                Lessons\n                            \n\n\n\n\n                                FAQ\n                            \n\n\n\n                                Login\n                            \n\n\n\n\n\n\n\n\n\n\n\nWeb Scraping Sandbox\n\n\n\nCountries of the World: A Simple Example\n\n\n                                A single page that lists information about all the countries in the world. Good for those just get started with web scraping.\n                            \n\n\n\n\nHockey Teams: Forms, Searching and Pagination\n\n\n                                Browse through a database of NHL team stats since 1990. Practice building a scraper that handles common website interface components.\n                            \n\n\n\n\nOscar Winning Films: AJAX and Javascript\n\n\n                                Click through a bunch of great films. Learn how content is added to the page asynchronously with Javascript and how you can scrape it.\n                            \n\n\n\n\nTurtles All the Way Down: Frames & iFrames\n\n\n                                Some older sites might still use frames to break up thier pages. Modern ones might be using iFrames to expose data. Learn about turtles as you scrape content inside frames.\n                            \n\n\n\n\nAdvanced Topics: Real World Challenges You'll Encounter\n\n\n                                Scraping real websites, you're likely run into a number of common gotchas. Get practice with spoofing headers, handling logins & session cookies, finding CSRF tokens, and other common network errors.\n                            \n\n\n\n\n\n\n\n\n\n\n\n                    Lessons and Videos \u00a9 Hartley Brody 2023"
+  },
+  {
+    "nav": "Scrape This Site\n                            \n\n\n\n\n                                Sandbox\n                            \n\n\n\n\n                                Lessons\n                            \n\n\n\n\n                                FAQ\n                            \n\n\n\n                                Login"
+  },
+  {
+    "div": "Scrape This Site\n                            \n\n\n\n\n                                Sandbox\n                            \n\n\n\n\n                                Lessons\n                            \n\n\n\n\n                                FAQ\n                            \n\n\n\n                                Login"
+  },
+  {
+    "div": "Scrape This Site\n                            \n\n\n\n\n                                Sandbox\n                            \n\n\n\n\n                                Lessons\n                            \n\n\n\n\n                                FAQ\n                            \n\n\n\n                                Login"
+  },
+  {
+    "ul": "Scrape This Site\n                            \n\n\n\n\n                                Sandbox\n                            \n\n\n\n\n                                Lessons\n                            \n\n\n\n\n                                FAQ\n                            \n\n\n\n                                Login"
+  },
+  {
+    "li": "Scrape This Site"
+  },
+  {
+    "a": "Scrape This Site"
+  },
+  {
+    "img": ""
+  },
+  {
+    "li": "Sandbox"
+  },
+  {
+    "a": "Sandbox"
+  },
+  {
+    "i": ""
+  },
+  {
+    "li": "Lessons"
+  },
+  {
+    "a": "Lessons"
+  },
+  {
+    "i": ""
+  },
+  {
+    "li": "FAQ"
+  },
+  {
+    "a": "FAQ"
+  },
+  {
+    "i": ""
+  },
+  {
+    "li": "Login"
+  },
+  {
+    "a": "Login"
+  },
+  {
+    "script": "var path = document.location.pathname;\n            var tab = undefined;\n            if (path === \"/\"){\n                tab = document.querySelector(\"#nav-homepage\");\n            } else if (path.indexOf(\"/faq/\") === 0){\n                tab = document.querySelector(\"#nav-faq\");\n            } else if (path.indexOf(\"/lessons/\") === 0){\n                tab = document.querySelector(\"#nav-lessons\");\n            } else if (path.indexOf(\"/pages/\") === 0) {\n                tab = document.querySelector(\"#nav-sandbox\");\n            } else if (path.indexOf(\"/login/\") === 0) {\n                tab = document.querySelector(\"#nav-login\");\n            }\n            tab.classList.add(\"active\")"
+  },
+  {
+    "div": "Web Scraping Sandbox\n\n\n\nCountries of the World: A Simple Example\n\n\n                                A single page that lists information about all the countries in the world. Good for those just get started with web scraping.\n                            \n\n\n\n\nHockey Teams: Forms, Searching and Pagination\n\n\n                                Browse through a database of NHL team stats since 1990. Practice building a scraper that handles common website interface components.\n                            \n\n\n\n\nOscar Winning Films: AJAX and Javascript\n\n\n                                Click through a bunch of great films. Learn how content is added to the page asynchronously with Javascript and how you can scrape it.\n                            \n\n\n\n\nTurtles All the Way Down: Frames & iFrames\n\n\n                                Some older sites might still use frames to break up thier pages. Modern ones might be using iFrames to expose data. Learn about turtles as you scrape content inside frames.\n                            \n\n\n\n\nAdvanced Topics: Real World Challenges You'll Encounter\n\n\n                                Scraping real websites, you're likely run into a number of common gotchas. Get practice with spoofing headers, handling logins & session cookies, finding CSRF tokens, and other common network errors."
+  },
+  {
+    "section": "Web Scraping Sandbox\n\n\n\nCountries of the World: A Simple Example\n\n\n                                A single page that lists information about all the countries in the world. Good for those just get started with web scraping.\n                            \n\n\n\n\nHockey Teams: Forms, Searching and Pagination\n\n\n                                Browse through a database of NHL team stats since 1990. Practice building a scraper that handles common website interface components.\n                            \n\n\n\n\nOscar Winning Films: AJAX and Javascript\n\n\n                                Click through a bunch of great films. Learn how content is added to the page asynchronously with Javascript and how you can scrape it.\n                            \n\n\n\n\nTurtles All the Way Down: Frames & iFrames\n\n\n                                Some older sites might still use frames to break up thier pages. Modern ones might be using iFrames to expose data. Learn about turtles as you scrape content inside frames.\n                            \n\n\n\n\nAdvanced Topics: Real World Challenges You'll Encounter\n\n\n                                Scraping real websites, you're likely run into a number of common gotchas. Get practice with spoofing headers, handling logins & session cookies, finding CSRF tokens, and other common network errors."
+  },
+  {
+    "div": "Web Scraping Sandbox\n\n\n\nCountries of the World: A Simple Example\n\n\n                                A single page that lists information about all the countries in the world. Good for those just get started with web scraping.\n                            \n\n\n\n\nHockey Teams: Forms, Searching and Pagination\n\n\n                                Browse through a database of NHL team stats since 1990. Practice building a scraper that handles common website interface components.\n                            \n\n\n\n\nOscar Winning Films: AJAX and Javascript\n\n\n                                Click through a bunch of great films. Learn how content is added to the page asynchronously with Javascript and how you can scrape it.\n                            \n\n\n\n\nTurtles All the Way Down: Frames & iFrames\n\n\n                                Some older sites might still use frames to break up thier pages. Modern ones might be using iFrames to expose data. Learn about turtles as you scrape content inside frames.\n                            \n\n\n\n\nAdvanced Topics: Real World Challenges You'll Encounter\n\n\n                                Scraping real websites, you're likely run into a number of common gotchas. Get practice with spoofing headers, handling logins & session cookies, finding CSRF tokens, and other common network errors."
+  },
+  {
+    "div": "Web Scraping Sandbox\n\n\n\nCountries of the World: A Simple Example\n\n\n                                A single page that lists information about all the countries in the world. Good for those just get started with web scraping.\n                            \n\n\n\n\nHockey Teams: Forms, Searching and Pagination\n\n\n                                Browse through a database of NHL team stats since 1990. Practice building a scraper that handles common website interface components.\n                            \n\n\n\n\nOscar Winning Films: AJAX and Javascript\n\n\n                                Click through a bunch of great films. Learn how content is added to the page asynchronously with Javascript and how you can scrape it.\n                            \n\n\n\n\nTurtles All the Way Down: Frames & iFrames\n\n\n                                Some older sites might still use frames to break up thier pages. Modern ones might be using iFrames to expose data. Learn about turtles as you scrape content inside frames.\n                            \n\n\n\n\nAdvanced Topics: Real World Challenges You'll Encounter\n\n\n                                Scraping real websites, you're likely run into a number of common gotchas. Get practice with spoofing headers, handling logins & session cookies, finding CSRF tokens, and other common network errors."
+  },
+  {
+    "div": "Web Scraping Sandbox\n\n\n\nCountries of the World: A Simple Example\n\n\n                                A single page that lists information about all the countries in the world. Good for those just get started with web scraping.\n                            \n\n\n\n\nHockey Teams: Forms, Searching and Pagination\n\n\n                                Browse through a database of NHL team stats since 1990. Practice building a scraper that handles common website interface components.\n                            \n\n\n\n\nOscar Winning Films: AJAX and Javascript\n\n\n                                Click through a bunch of great films. Learn how content is added to the page asynchronously with Javascript and how you can scrape it.\n                            \n\n\n\n\nTurtles All the Way Down: Frames & iFrames\n\n\n                                Some older sites might still use frames to break up thier pages. Modern ones might be using iFrames to expose data. Learn about turtles as you scrape content inside frames.\n                            \n\n\n\n\nAdvanced Topics: Real World Challenges You'll Encounter\n\n\n                                Scraping real websites, you're likely run into a number of common gotchas. Get practice with spoofing headers, handling logins & session cookies, finding CSRF tokens, and other common network errors."
+  },
+  {
+    "h1": "Web Scraping Sandbox"
+  },
+  {
+    "hr": ""
+  },
+  {
+    "div": "Countries of the World: A Simple Example\n\n\n                                A single page that lists information about all the countries in the world. Good for those just get started with web scraping."
+  },
+  {
+    "h3": "Countries of the World: A Simple Example"
+  },
+  {
+    "a": "Countries of the World: A Simple Example"
+  },
+  {
+    "p": "A single page that lists information about all the countries in the world. Good for those just get started with web scraping."
+  },
+  {
+    "hr": ""
+  },
+  {
+    "div": "Hockey Teams: Forms, Searching and Pagination\n\n\n                                Browse through a database of NHL team stats since 1990. Practice building a scraper that handles common website interface components."
+  },
+  {
+    "h3": "Hockey Teams: Forms, Searching and Pagination"
+  },
+  {
+    "a": "Hockey Teams: Forms, Searching and Pagination"
+  },
+  {
+    "p": "Browse through a database of NHL team stats since 1990. Practice building a scraper that handles common website interface components."
+  },
+  {
+    "hr": ""
+  },
+  {
+    "div": "Oscar Winning Films: AJAX and Javascript\n\n\n                                Click through a bunch of great films. Learn how content is added to the page asynchronously with Javascript and how you can scrape it."
+  },
+  {
+    "h3": "Oscar Winning Films: AJAX and Javascript"
+  },
+  {
+    "a": "Oscar Winning Films: AJAX and Javascript"
+  },
+  {
+    "p": "Click through a bunch of great films. Learn how content is added to the page asynchronously with Javascript and how you can scrape it."
+  },
+  {
+    "hr": ""
+  },
+  {
+    "div": "Turtles All the Way Down: Frames & iFrames\n\n\n                                Some older sites might still use frames to break up thier pages. Modern ones might be using iFrames to expose data. Learn about turtles as you scrape content inside frames."
+  },
+  {
+    "h3": "Turtles All the Way Down: Frames & iFrames"
+  },
+  {
+    "a": "Turtles All the Way Down: Frames & iFrames"
+  },
+  {
+    "p": "Some older sites might still use frames to break up thier pages. Modern ones might be using iFrames to expose data. Learn about turtles as you scrape content inside frames."
+  },
+  {
+    "hr": ""
+  },
+  {
+    "div": "Advanced Topics: Real World Challenges You'll Encounter\n\n\n                                Scraping real websites, you're likely run into a number of common gotchas. Get practice with spoofing headers, handling logins & session cookies, finding CSRF tokens, and other common network errors."
+  },
+  {
+    "h3": "Advanced Topics: Real World Challenges You'll Encounter"
+  },
+  {
+    "a": "Advanced Topics: Real World Challenges You'll Encounter"
+  },
+  {
+    "p": "Scraping real websites, you're likely run into a number of common gotchas. Get practice with spoofing headers, handling logins & session cookies, finding CSRF tokens, and other common network errors."
+  },
+  {
+    "hr": ""
+  },
+  {
+    "section": "Lessons and Videos \u00a9 Hartley Brody 2023"
+  },
+  {
+    "div": "Lessons and Videos \u00a9 Hartley Brody 2023"
+  },
+  {
+    "div": "Lessons and Videos \u00a9 Hartley Brody 2023"
+  },
+  {
+    "div": "Lessons and Videos \u00a9 Hartley Brody 2023"
+  },
+  {
+    "script": ""
+  },
+  {
+    "script": ""
+  },
+  {
+    "script": ""
+  },
+  {
+    "link": ""
+  },
+  {
+    "script": "PNotify.prototype.options.styling = \"bootstrap3\";\n    $(function(){\n      \n    });\n    \n\n    $(function () {\n      $('[data-toggle=\"tooltip\"]').tooltip()\n    })"
+  },
+  {
+    "script": "$(\"video\").hover(function() {\n        $(this).prop(\"controls\", true);\n    }, function() {\n        $(this).prop(\"controls\", false);\n    });\n\n    $(\"video\").click(function() {\n        if( this.paused){\n            this.play();\n        }\n        else {\n            this.pause();\n        }\n    });"
+  },
+  {
+    "script": "(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){\n    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),\n    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)\n    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');\n\n    ga('create', 'UA-41551755-8', 'auto');\n    ga('send', 'pageview');"
+  },
+  {
+    "script": "!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?\n  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;\n  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;\n  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,\n  document,'script','https://connect.facebook.net/en_US/fbevents.js');\n\n  fbq('init', '764287443701341');\n  fbq('track', \"PageView\");"
+  },
+  {
+    "noscript": ""
+  },
+  {
+    "img": ""
+  },
+  {
+    "script": "/* <![CDATA[ */\n    var google_conversion_id = 950945448;\n    var google_custom_params = window.google_tag_params;\n    var google_remarketing_only = true;\n    /* ]]> */"
+  },
+  {
+    "script": ""
+  },
+  {
+    "noscript": ""
+  },
+  {
+    "div": ""
+  },
+  {
+    "img": ""
+  },
+  {
+    "script": ""
+  },
+  {
+    "script": "window.dataLayer = window.dataLayer || [];\n   function gtag(){dataLayer.push(arguments);}\n   gtag('js', new Date());\n\n   gtag('config', 'AW-950945448');"
+  }
+]
