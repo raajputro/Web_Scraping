@@ -18,9 +18,14 @@ def scrape_page(given_url):
         #     for tag in tags:
         #         f.write(f"{tag.name}\n")
         #         print("Tags and values written to tags.txt file")
-        page_title = soup.title.string()
+        page_title = soup.title.text.split()[0]
+        print(page_title)
         with open(f"{page_title}.json", "w") as json_file:
-            json.dump([{tag.name: tag.text.strip()} for tag in tags], json_file)
+            #json.dump([{tag.name: tag.text.strip()} for tag in tags], json_file)
+            json.dump([{tag.name: tag.text.strip()} for tag in tags if tag.text.strip()], json_file)
+            print(f"{page_title} has been created!")
 
     except requests.exceptions.RequestException as e:
         print("Failed!",e)
+
+scrape_page(given_url=url)
