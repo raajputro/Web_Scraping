@@ -59,6 +59,9 @@ def scrape_page(given_url):
         tags = soup.find_all(True)
 
         for tag in tags:
+            with open("All_Tags.txt","a") as file:
+                file.write(str(tag))
+
             # if tag.name in html_elements['basic_elements'] and tag.text.strip():
             #     file_name = f"Basic Elements of Page " + page_title + ".json"
             #     with open(file_name, "w") as jFile:
@@ -67,6 +70,7 @@ def scrape_page(given_url):
             if tag.name in html_elements['link_elements'] and tag.text.strip():
                 file_name = f"Link Elements of Page " + page_title + ".json"
                 with open(file_name, "a") as jFile: # this will enter only on element, to get all elements, need to create the json data first and them dump
+                    #jFile.write(str({tag.text.strip(): tag['href']} if tag.name == 'a' else {tag.name: tag.text.strip()})+",")
                     json.dump([{tag.text.strip(): tag['href']} if tag.name == 'a' else {tag.name: tag.text.strip()}], jFile, indent=4)
 
 
