@@ -66,7 +66,7 @@ def scrape_page(given_url):
 
             if tag.name in html_elements['link_elements'] and tag.text.strip():
                 file_name = f"Link Elements of Page " + page_title + ".json"
-                with open(file_name, "w") as jFile: # this will enter only on element, to get all elements, need to create the json data first and them dump
+                with open(file_name, "a") as jFile: # this will enter only on element, to get all elements, need to create the json data first and them dump
                     json.dump([{tag.text.strip(): tag['href']} if tag.name == 'a' else {tag.name: tag.text.strip()}], jFile, indent=4)
 
 
