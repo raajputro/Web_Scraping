@@ -1,9 +1,7 @@
+import json
 import requests
 from bs4 import BeautifulSoup
 from lxml import etree
-
-# URL to scrape
-url = "https://www.scrapethissite.com/pages/"
 
 
 def tag_data(element_tree, tag) -> []:
@@ -26,7 +24,6 @@ def tag_data(element_tree, tag) -> []:
 
 
 def print_dict_data(dict_list):
-    #print(f"Sent Dict List: {dict_list}")
     for items in dict_list:
         if items:
             for item in items:
@@ -35,6 +32,9 @@ def print_dict_data(dict_list):
                 print("\n")
             print("\n")
 
+
+# URL to scrape
+url = "https://www.scrapethissite.com/pages/"
 
 # Send a GET request
 headers = {"User-Agent": "Mozilla/5.0"}
@@ -47,36 +47,21 @@ if response.status_code == 200:
     parser = etree.HTMLParser()
     tree = etree.fromstring(str(soup), parser)
 
-    # Extract headings and generate relative XPaths
-    headings_data = []
+    # Extract headings, links and generate relative XPaths
+    tag_list = ["h1", "h2", "h3", "a[@href]"]
 
-    for tag in ["h1", "h2", "h3", "a[@href]"]:
+    headings_data = []
+    for tag in tag_list:
         hData = tag_data(tree, tag)
         if hData:
             headings_data.append(hData)
 
     # Print extracted headings and their relative XPaths
-    print("\nHeadings & XPaths:")
+    print("\nHeadings, Links & their XPaths:")
     print_dict_data(headings_data)
 
-    # for heading in headings_data:
-    #     #print(f"Heading: {heading}\n")
-    #     if heading:
-    #         for item in heading:
-    #             for key, value in item.items():
-    #                 print(f"{key} : {value}")
-    #             print("\n")
-    #         print("\n")
-
-    # # Extract links and their relative XPaths
-    # links_data = tag_data(tree, "a[@href]")
-    #
-    # # Print extracted links and their relative XPaths
-    # print("\n\n\nLinks Found:")
-    #
-    # for links in links_data:
-    #     print(f"Links: {links}")
-    #     print(f"Links URL: {links['elem_url']}")
+    with open("page_data.json", "a") as pJson:
+        json.dump(headings_data, pJson,indent=4)
 
 else:
     print(f"Failed to retrieve the page. Status code: {response.status_code}")
