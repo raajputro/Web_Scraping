@@ -48,13 +48,14 @@ if response.status_code == 200:
     tree = etree.fromstring(str(soup), parser)
 
     # Extract headings, links and generate relative XPaths
-    tag_list = ["h1", "h2", "h3", "a[@href]"]
+    tag_list = ["h1", "h2", "h3", "a[@href]","title","img","svg"]
 
     headings_data = []
     for tag in tag_list:
         hData = tag_data(tree, tag)
         if hData:
             headings_data.append(hData)
+        print(f"Done with {tag}")
 
     # Print extracted headings and their relative XPaths
     print("\nHeadings, Links & their XPaths:")
