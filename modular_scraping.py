@@ -7,10 +7,11 @@ from lxml import etree
 def tag_data(element_tree, tag) -> []:
     t_data = []
     for element in element_tree.xpath(f"//{tag}"):
-        if len(element.text.strip()) > 1:
+        if element.text and len(element.text) > 1:
             text = element.text.strip()
             # Build relative XPath
             parent = element.getparent()
+            children = element.getchildren()
             siblings = parent.findall(tag) if parent is not None else []
             index = siblings.index(element) + 1 if len(siblings) > 1 else None
             if tag == "a[@href]":
@@ -34,7 +35,8 @@ def print_dict_data(dict_list):
 
 
 # URL to scrape
-url = "https://www.scrapethissite.com/pages/"
+#url = "https://www.scrapethissite.com/pages/"
+url = "https://www.techlandbd.com/graphics-card"
 
 # Send a GET request
 headers = {"User-Agent": "Mozilla/5.0"}
@@ -43,12 +45,17 @@ response = requests.get(url, headers=headers)
 if response.status_code == 200:
     soup = BeautifulSoup(response.text, "html.parser")
 
+    # Slice page data, getting only container data
+    soup2 = soup.find_all(id='content')
+
     # Convert BeautifulSoup object to lxml etree
     parser = etree.HTMLParser()
-    tree = etree.fromstring(str(soup), parser)
+    tree = etree.fromstring(str(soup2), parser)
+    print(f"Tree of the page: ")
+    print(tree)
 
     # Extract headings, links and generate relative XPaths
-    tag_list = ["h1", "h2", "h3", "a[@href]","title","img","svg"]
+    tag_list = ["h1", "h2", "h3", "a[@href]","title","svg","li"]
 
     headings_data = []
     for tag in tag_list:
